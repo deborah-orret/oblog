@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfect Match</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../assets/theme.css">
+  <script src="game.js" defer></script>
+</head>
+<body class="site-theme theme-app">
+  <a class="teacher-home" href="../index.html" hidden>Back to home</a>
+  <main>
+    <header><h1>Perfect Match</h1>
+    </header>
+    <div id="teacher" hidden></div>
+    <div id="student">
+      <div class="workspace">
+        <section aria-label="Character cards"><div id="characters" class="characters"></div></section>
+        <section><h2>matches</h2>
+          <div class="actions"><button id="check" disabled>check</button><button id="clear" class="secondary">clear</button></div>
+          <p id="result" role="status" aria-live="polite"></p>
+          <div id="pairs"></div>
+        </section>
+      </div>
+      <section><h2>attempts</h2><div id="history"></div></section>
+    </div>
+  </main>
+  <dialog id="win-dialog" aria-labelledby="win-title">
+    <h2 id="win-title">You win!</h2>
+    <form method="dialog" class="actions">
+      <button id="play-again" type="button" autofocus>Play again?</button>
+      <button class="secondary" type="submit">Close</button>
+    </form>
+  </dialog>
+  <dialog id="card-preview" aria-label="Character card preview">
+    <div id="preview-image"></div>
+  </dialog>
+</body>
+</html>

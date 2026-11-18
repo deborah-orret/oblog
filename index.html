@@ -1,1 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Black Cat Day</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body class="site-theme">
+  <header class="welcome">
+    <h1>Black Cat Day</h1>
+    <div class="welcome-copy">
+      <p>Hi! Happy Black Cat Day! 🐈‍⬛ <br><br> Black Cat Days are celebrated at the end of each unit in middle school computer science. The goal of the day is just to take a break from coding, bond with classmates, do a hands on activity that's a little different than a traditional project, and pull the winning raffle tickets for each unit! <br><br> The following apps include logic puzzles, games, and class activities that have been designed and created for Black Cat Days. All of these activities have been designed and developed by Ms. Orret (me), but often inspired by other games. Feel free to reach out if you have an idea or notice a bug! <br><br></p>
+      <p class="ai-note"> While AI was used in the software development of this website and many of these apps, AI was not used to ideate or design these games or to create any visual assets. </p>
+    </div>
+    <div class="cat-portrait"><img src="assets/blackcat.png" alt="A little black cat" width="120" height="120" onerror="this.hidden = true"></div>
+  </header>
+  <main class="collection">
+    <!-- Add a project by copying an article and editing its link, image, title,
+         description, and tags. Tags are labels, not filters.
+         Suggested tags: >30 minutes, <30 minutes, Pairs, Groups, Full Class,
+         Independent, Teacher Led, Student Led. Adjust durations to your lesson. -->
+    <div class="collection-heading">
+      <h2 id="browse-heading">Black Cat Days</h2>
+      <div class="gallery-controls" aria-label="Gallery controls">
+        <button type="button" id="gallery-prev" aria-label="Previous games" aria-controls="game-gallery">&#8249;</button>
+        <button type="button" id="gallery-next" aria-label="Next games" aria-controls="game-gallery">&#8250;</button>
+      </div>
+    </div>
 
+    <div class="game-grid" id="game-gallery" tabindex="0" role="region" aria-labelledby="browse-heading">
+      <article class="game-card">
+        <a class="game-link" href="trivia/index.html" target="black-cat-trivia">
+          <div class="thumbnail">
+            <time class="game-date" datetime="2026-11">November 2026</time>
+            <img src="assets/bcdt.png" alt="">
+          </div>
+          <div class="card-content">
+            <h3>Black Cat Day Trivia</h3>
+            <p>Choose what each trivia question is worth, then put your points on the line in the final round.</p>
+            <ul class="tags" aria-label="Game tags"><li>Groups</li><li>Teacher Led</li></ul>
+          </div>
+        </a>
+      </article>
+      <article class="game-card">
+        <a class="game-link" href="practicalmagicescaperoom/teacher.html" target="practical-magic-teacher">
+          <div class="thumbnail">
+            <time class="game-date" datetime="2026-10">October 2026</time>
+            <img src="practicalmagicescaperoom/assets/desk.png" alt="A desk full of clues in the Practical Magic escape room" width="720" height="450">
+          </div>
+          <div class="card-content">
+            <h3>Practical Magic Escape Room</h3>
+            <p>A mystery game based on the movie Practical Magic. Students will need to work to find clues and solve logic puzzles to break the curse.</p>
+            <ul class="tags" aria-label="Game tags"><li>&gt;30 minutes</li><li>Groups</li><li>Student Led</li></ul>
+          </div>
+        </a>
+      </article>
+      <article class="game-card">
+        <a class="game-link" href="wavelength/index.html?view=teacher" id="wavelength-link" target="wavelength-teacher">
+          <div class="thumbnail">
+            <time class="game-date" datetime="2026-09">September 2026</time>
+            <img src="assets/wavelength.png" alt="A colorful semicircular dial inspired by Wavelength" width="720" height="450">
+          </div>
+          <div class="card-content">
+            <h3>Westridge Wavelength</h3>
+            <p>Based on the popular board game, students will work in teams to give clues to try to get a teammate to get on the same wavelength.</p>
+            <ul class="tags" aria-label="Game tags"><li>&lt;30 minutes</li><li>Full Class</li><li>Teacher Led</li></ul>
+          </div>
+        </a>
+      </article>
+      <article class="game-card">
+        <a class="game-link" href="perfectmatch/index.html?view=teacher" id="perfect-match-link" target="perfect-match-teacher">
+          <div class="thumbnail">
+            <time class="game-date" datetime="2026-02">February 2026</time>
+            <img class="cover-top" src="assets/perfectmatch.png" alt="Perfect Match game cover" width="720" height="450">
+          </div>
+          <div class="card-content">
+            <h3>Perfect Match</h3>
+            <p>Students use logic and deduction to find the correct set of "Perfect Matches".</p>
+            <ul class="tags" aria-label="Game tags"><li>&lt;30 minutes</li><li>Groups</li><li>Student Led</li></ul>
+          </div>
+        </a>
+      </article>
+      <article class="game-card">
+        <a class="game-link" href="ciderstacks/teacher.html" target="cider-teacher">
+          <div class="thumbnail">
+            <time class="game-date" datetime="2025-11">November 2025</time>
+            <img src="assets/ciderstacks.svg" alt="Four wooden cider barrels stacked on the start post" width="720" height="450">
+          </div>
+          <div class="card-content">
+            <h3>Bean's Cider Stacks</h3>
+            <p>A barrel-stacking Towers of Hanoi puzzle.</p>
+            <ul class="tags" aria-label="Game tags"><li>&lt;30 minutes</li><li>Individual</li><li>Student Led</li></ul>
+          </div>
+        </a>
+      </article>
+    </div>
+
+  </main>
+  <script>
+    const gallery = document.getElementById('game-gallery');
+    const previous = document.getElementById('gallery-prev');
+    const next = document.getElementById('gallery-next');
+    function updateGalleryControls() {
+      previous.disabled = gallery.scrollLeft <= 1;
+      next.disabled = gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth - 1;
+    }
+    function browseGames(direction) {
+      const card = gallery.querySelector('.game-card');
+      const step = card.getBoundingClientRect().width + parseFloat(getComputedStyle(gallery).columnGap);
+      gallery.scrollBy({ left: direction * step, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    }
+    previous.addEventListener('click', () => browseGames(-1));
+    next.addEventListener('click', () => browseGames(1));
+    gallery.addEventListener('keydown', event => {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        browseGames(event.key === 'ArrowLeft' ? -1 : 1);
+      }
+    });
+    gallery.addEventListener('scroll', updateGalleryControls, { passive: true });
+    new ResizeObserver(updateGalleryControls).observe(gallery);
+    updateGalleryControls();
+  </script>
+</body>
+</html>

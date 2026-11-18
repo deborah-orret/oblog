@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Black Cat Day Trivia</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="preset.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body class="site-theme">
+  <a class="teacher-home" href="../index.html" hidden>Back to home</a>
+  <main>
+    <header>
+      <div class="wordmark" aria-hidden="true"><span>B</span><span>C</span><span>D</span><span>T</span></div>
+      <h1>Black Cat Day Trivia</h1>
+      <p>November 2026</p>
+      <nav aria-label="Game views"><a href="?view=teacher">Teacher</a> · <a href="?view=student">Student</a></nav>
+    </header>
+    <p id="status" role="status"></p>
+    <form id="author" hidden>
+      <h2>Build your game</h2>
+      <p>Add four categories with four questions each. The questions and answer keys stay in the teacher view.</p>
+      <p>In an answer key, use <code>|</code> between accepted alternatives and <code>;</code> between required parts. Example <code>onions | fried onions; cream of mushroom soup</code>.</p>
+      <div id="editor"></div>
+      <button>Create student link</button>
+      <button type="button" id="load-preset">Use November questions</button>
+    </form>
+    <form id="join" hidden>
+      <h2>Start your worksheet</h2>
+      <label>Team or student name <input name="name" required maxlength="40" autocomplete="off"></label>
+      <button>Start game</button>
+    </form>
+    <div id="live" hidden>
+      <section>
+        <div class="scoreboard"><strong id="identity"></strong><strong id="summary"></strong></div>
+        <div id="share" hidden></div>
+        <h2 id="round"></h2>
+        <div id="teacher-controls" hidden>
+          <p id="read-aloud"></p>
+          <p id="key"></p>
+          <button type="button" id="advance"></button>
+          <button type="button" id="new-room">Edit game setup</button>
+        </div>
+        <form id="submit" hidden>
+          <label id="wager-label">Wager <select name="wager" required></select></label>
+          <label id="answer-label">Answer <input name="answer" maxlength="200" autocomplete="off"></label>
+          <button>Lock in</button>
+        </form>
+        <button type="button" id="continue" hidden></button>
+      </section>
+      <div id="scorecard"></div>
+    </div>
+  </main>
+</body>
+</html>

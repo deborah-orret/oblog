@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bean's Cider Stacks</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../assets/theme.css">
+  <script src="game.js" defer></script>
+</head>
+<body class="site-theme cider-game">
+  <main>
+    <h1>Bean's Cider Stacks</h1>
+    <form id="settings">
+      <label for="barrel-count">Barrels <input id="barrel-count" type="number" min="1" max="7" step="1" value="4" required></label>
+      <button type="submit">Start over</button>
+    </form>
+    <div class="stats"><span>Minimum moves: <strong id="minimum">15</strong></span><span>Moves: <strong id="moves">0</strong></span></div>
+    <p class="rules">Move the stack from START to END, one barrel at a time. A larger barrel cannot go on a smaller one.</p>
+    <div class="board">
+      <canvas id="board" width="900" height="390" aria-label="Three stacks of cider barrels"></canvas>
+      <div class="peg-controls">
+        <button type="button" data-peg="0" aria-label="Start stack" aria-pressed="false"></button>
+        <button type="button" data-peg="1" aria-label="Middle stack" aria-pressed="false"></button>
+        <button type="button" data-peg="2" aria-label="End stack" aria-pressed="false"></button>
+      </div>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>

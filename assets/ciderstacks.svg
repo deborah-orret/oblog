@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450">
+  <rect width="720" height="450" fill="#fffef6"/>
+  <text x="360" y="68" text-anchor="middle" font-family="Arial,sans-serif" font-size="37" font-weight="800" font-style="italic" fill="#13272d">Bean's Cider Stacks</text>
+  <g stroke="#826745" stroke-width="7" stroke-linecap="round">
+    <path d="M145 135V353M360 135V353M575 135V353"/>
+    <path d="M55 365H665" stroke="#64503a" stroke-width="10"/>
+  </g>
+  <defs>
+    <g id="barrel">
+      <rect x="-100" y="-17" width="200" height="34" rx="10" fill="#b5763e"/>
+      <path d="M-60-17H60V17H-60Z" fill="#c48c4e"/>
+      <ellipse cy="-17" rx="100" ry="8" fill="#c99658"/>
+      <g fill="none" stroke="#785028" stroke-width="2">
+        <path d="M-100-4Q0 9 100-4M-100 8Q0 23 100 8M-50-11V12M50-11V12"/>
+      </g>
+    </g>
+  </defs>
+  <use href="#barrel" transform="translate(145 340)"/>
+  <use href="#barrel" transform="translate(145 298) scale(.82 1)"/>
+  <use href="#barrel" transform="translate(145 256) scale(.64 1)"/>
+  <use href="#barrel" transform="translate(145 214) scale(.46 1)"/>
+  <g text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#315d73">
+    <text x="145" y="411">START</text><text x="575" y="411">END</text>
+  </g>
+</svg>
